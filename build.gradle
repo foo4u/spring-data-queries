@@ -14,21 +14,11 @@ repositories {
 
 dependencies {
 
-    providedCompile "javax.servlet:servlet-api:2.5"
     providedCompile files('src/main/webapp/WEB-INF') // for integration tests
 
     compile "org.springframework.data:spring-data-commons-core:1.1.0.RELEASE"
-    //compile "org.springframework.data:spring-data-commons-core:1.4.0.BUILD-SNAPSHOT"
-    //compile "org.springframework.data:spring-data-mongodb:1.1.0.M1"
-    compile "org.springframework.data:spring-data-mongodb:1.1.0.BUILD-SNAPSHOT"
-    compile "commons-fileupload:commons-fileupload:1.2.2"
-    compile "commons-io:commons-io:2.3"
-    compile "javax.validation:validation-api:1.0.0.GA"
-    compile "org.hibernate:hibernate-validator:4.2.0.Final"
-    compile "org.slf4j:slf4j-api:1.6.4"
-    compile "org.slf4j:slf4j-simple:1.6.4"
+    compile "org.springframework.data:spring-data-mongodb:1.1.0.M1"
     testCompile "junit:junit:4.9"
-    testCompile "org.easymock:easymock:2.5.1"
     testCompile "org.springframework:spring-test:3.1.1.RELEASE"
 }
 

@@ -11,9 +11,6 @@ repositories {
 }
 
 dependencies {
-
-    providedCompile files('src/main/webapp/WEB-INF') // for integration tests
-
     compile "org.springframework.data:spring-data-commons-core:1.4.0.BUILD-SNAPSHOT"
     compile "org.springframework.data:spring-data-mongodb:1.1.0.BUILD-SNAPSHOT"
     testCompile "junit:junit:4.9"

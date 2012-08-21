@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import net.rossillo.car.domain.Automaker;
 import net.rossillo.car.domain.Car;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +28,9 @@ public final class CarRepositoryTest {
 	@Before
 	public void setUp() throws Exception {
 		
+		carRepository.deleteAll();
+		automakerRepository.deleteAll();
+
 		ford = automakerRepository.save(new Automaker("Ford"));
 		honda = automakerRepository.save(new Automaker("Honda"));
 		toyota = automakerRepository.save(new Automaker("Toyota"));
@@ -44,12 +46,6 @@ public final class CarRepositoryTest {
 		carRepository.save(new Car(toyota, "Highlander"));
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		carRepository.deleteAll();
-		automakerRepository.deleteAll();
-	}
-
 	@Test
 	public void testFindByAutomaker() {
 		assertEquals(1, carRepository.findByAutomaker(ford).size());
@@ -59,7 +55,7 @@ public final class CarRepositoryTest {
 	
 	@Test
 	public void testFindByAutomakerIn() {
-		assertEquals(4, carRepository.findByAutomakerIn(ford, honda).size());
+		assertEquals(4, carRepository.findByAutomakerIn(ford, toyota).size());
 	}
 	
 	@Test

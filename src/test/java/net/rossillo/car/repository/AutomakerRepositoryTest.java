@@ -13,7 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/repositories.xml")
+@ContextConfiguration(locations = "classpath:repositories.xml")
 public final class AutomakerRepositoryTest {
 
 	@Autowired

@@ -58,6 +58,11 @@ public final class CarRepositoryTest {
 	}
 	
 	@Test
+	public void testFindByAutomakerIn() {
+		assertEquals(4, carRepository.findByAutomakerIn(ford, honda).size());
+	}
+	
+	@Test
 	public void testFindCarsByAutomakers() {
 		assertEquals(4, carRepository.findCarsByAutomakers(ford, honda).size());
 		assertEquals(4, carRepository.findCarsByAutomakers(ford, toyota).size());

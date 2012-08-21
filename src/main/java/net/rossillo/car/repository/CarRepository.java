@@ -12,4 +12,6 @@ public interface CarRepository extends MongoRepository<Car, String>, CustomCarRe
 
 	public List<Car> findByAutomaker(Automaker make);
 	
+	public List<Car> findByAutomakerIn(Automaker... automakers);
+	
 }
